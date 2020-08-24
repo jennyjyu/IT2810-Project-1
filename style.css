@@ -1,0 +1,155 @@
+
+header {
+  margin: auto;
+  padding: 5px 200px;
+  color: black;
+  text-align: center;
+
+}
+
+h1 {
+  font-size: 30px;
+  color: black;
+}
+
+
+
+
+body {
+  margin: 5px;
+  font-family: Poppins;
+  text-align: center;
+  background-image: url("img/concrete.jpg");
+  background-attachment: fixed;
+  background-color: #fffff0;
+  color: #6e6e6d;
+  /* background-blend-mode: lighten; */
+}
+
+p {
+  font-size: 16px;
+  color: #333;
+  text-align: left;
+}
+
+.artwork {
+  display : flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.svg {
+  width: 45%;
+  height: 500px;
+  border: 15px grey ridge;
+  margin-left: 40px;
+  margin-right: 5px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  background-color: white;
+  text-align: center;
+}
+
+.canvas {
+  width: 45%;
+  height:500px;
+  border: 15px grey ridge;
+  margin-right: 40px;
+  margin-left: 5px;
+  flex-grow: 1;
+  flex-shrink: 1;
+  background-color: white;
+}
+
+.artTitles {
+  margin-top: 10px;
+  display : flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.svgTitle {
+  margin: 5px auto;
+  padding: 0px 10px;
+  /* flex-grow: 1;
+  flex-shrink: 1; */
+  text-align: center;
+  font-style: italic;
+  background-color: #FFD700;
+  border: 5px #FFD700 groove;
+  font-size: 12px;
+  color: #a38a00;
+}
+
+.canvasTitle {
+  margin: 5px auto;
+  padding: 0px 10px;
+  /* flex-grow: 1;
+  flex-shrink: 1; */
+  text-align: center;
+  font-style: italic;
+  background-color: #FFD700;
+  border: 5px #FFD700 groove;
+  font-size: 12px;
+  color: #a38a00;
+}
+
+footer {
+  margin: auto;
+  padding: 10px;
+  background-color: darkgrey;
+  color: white;
+  text-align: center;
+}
+
+#circle1 {
+  stroke: black;
+  stroke-width: 2;
+}
+
+#rectangle {
+  fill: #CCFF99;
+  stroke: black;
+  stroke-width: 2;
+}
+
+.button {
+  margin-top: 100px;
+  margin-bottom: 50px
+}
+
+#docButton {
+  background-color: grey;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 17px;
+  border-radius: 14px;
+  border: 2px solid #333;
+  font-family: Poppins;
+  color: white;
+}
+
+#documentation {
+  display: none;
+  margin: 20px 150px;
+}
+
+
+.links {
+  font-size: 13px;
+  text-align: left;
+}
+
+h2 {
+  font-size: 24px;
+  color: black;
+  margin-top: 5px;
+}
+
+h4 {
+  text-align: left;
+  font-style: bold;
+  font-size: 20px;
+  margin-bottom: 0px;
+  color: #333;
+}

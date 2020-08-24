@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="action.js"></script>
+    <title>Anonym sin kunst</title>
+  </head>
+
+  <body onload="draw();">
+    <header>
+      <h1>My daughter's first art</h1>
+      <p>My daughter is 4 years old, and this is her first time making art digitally. She has a lot of earlier experience
+        with colored pencils and paper, but now she wanted to challenge herself. It is - in her opinion, not as
+        fun on paper, since it limits the possibilities for interaction.</p>
+
+      <p>This art is a combination of her favorite colors and shapes. Each shape and its color has a reason for being
+      included in her art. The piece "Safe, Venturous Globe" symbolizes her experience of her first couple of years in life.
+      Her second piece "Not a blank canvas anymore" represents how she sees the world now that she has grown up a little more.
+      As she becomes older, she has to act more like a grown up, hence the removal of the gradient coloring.</p>
+
+      <p>She is on the stepping stones of becoming a new Picasso or DaVinci. In a couple of years,
+      these art pieces will be in museums.</p>
+    </header>
+
+    <div class="artwork">
+      <div class="svg">
+        <svg width= "650px" height="500px"> #randome verdier
+          <circle
+            id=circle1
+            cx="500"
+            cy="350"
+            r="100"
+            fill="url(#gradient)"
+          />
+
+          <rect
+          id = rectangle
+          x="100"
+          y="210"
+          width = "200"
+          height = "100"
+          />
+
+          <rect
+          id=roundrect
+          x="350"
+          y="50"
+          rx="30"
+          ry="30"
+          width = "150"
+          height = "150"
+          fill = "rgb(204, 255, 255)"
+          stroke = "black"
+          />
+
+          <polygon
+          id = star
+          points="100,10 40,198 190,78 10,78 160,198"
+          fill = "#FFFF66"
+
+          />
+
+          <defs>
+            <linearGradient id = "gradient">
+              <stop offset = "0%"
+                stop-color = "#CC66FF"
+              />
+              <stop offset = "100%"
+                stop-color = "white"
+            </linearGradient>
+          </defs>
+
+          <ellipse
+            id = ellipse
+            cx = "200"
+            cy = "400"
+            rx = "150"
+            ry = "75"
+            fill = "#FFCC66"
+            stroke = "black"
+          />
+        </svg>
+
+      </div> <!--svg-->
+
+
+    <div class="canvas">
+      <canvas id="canvas" width= "650px" height="500px">
+      </canvas>
+
+      <script src="canvas.js"> </script>
+    </div> <!--canvas-->
+  </div> <!--artwork-->
+
+  <div class="artTitles">
+    <div class="svgTitle">
+      <h3>Safe, Venturous Globe</h3>
+    </div>
+    <div class="canvasTitle">
+      <h3>Not a blank canvas anymore</h3>
+    </div>
+  </div>
+
+  <div class="button">
+    <button type="button" id="docButton">
+      DOCUMENTATION
+    </button>
+  </div>
+
+
+    <div id="documentation">
+      <h1>Project documentation</h1>
+
+      <h2>CSS Flexbox</h2>
+
+      <p>In this project CSS Flexbox has been used to make a sensible and responsive layout on the website.
+        Elements that are to be placed next to each other horizontally, are placed in the same container,
+        which is then manipulated with “display: flex” and “flex-direction: row”, so that the layout wanted was achieved.
+        The artwork and the titles of the art are placed in one container each, and as seen on the website,
+        they appear alongside each other.
+
+      <p>The rest of the layout is decided by the basic box model from CSS.
+        Since the other elements only needed to be placed on top of each other, vertically,
+        there was no need to use CSS Flexbox. When basing the rest of the layout on the basic CSS box model,
+        the containers of the art and titles are behaving like the element to be placed vertically,
+        not the elements within the container.</p>
+
+        <h2>HTML Canvas and SVG in HTML</h2>
+
+        <p>The shapes and figures in SVG were computed in HTML by specifying the coordinates,
+          heights, widths and so on. Some of them have styling in CSS as well. In SVG in HTML,
+          each figure is treated like an object. They have their own ID and their own attributes.
+          This made it easy to interact with the figures, because you can make a happening to be
+          associated with an object. </p>
+
+        <p>With HTML Canvas, on the other hand, the Canvas is only a container where you can draw
+          elements by specifying coordinates. The elements in the artwork each have their own draw
+          function in JavaScript which draws them by using paths, but they have no ID or attributes.
+          Colors and strokes are added by specifying fillStyle() and strokeStyle().
+          To add functionality to a single element, one would have to manually match the coordinates
+          of the pointer with the coordinates of the drawn figure.
+          This made it difficult to make i.e. a click function to only interact
+          with a specified element. Therefore all the interaction with the artwork made in HTML Canvas
+          happens to the entire container, and are not limited to the figures drawn. </p>
+
+        <h2>jQuery</h2>
+
+        <p>jQuery has been used to add functionality and interactivity to the two pieces of art.
+          With the figures in SVG, a function is associated with that element only using selectors.
+          They are triggered by different events like hover, click or double click, and they cause
+          different actions like color change, hide, show etc.</p>
+
+        <p>With the Canvas art, the selector of the functions is always the entire canvas container.
+        Different events still trigger different actions, but the events are not limited to happen in a specified
+        area or on a specified element in the canvas. Within the jQuery functions, basic JavaScript is used to make
+        it seem like it is only one element that is triggered, by drawing a new figure on top of the other in another color.</p>
+
+        <h2>Cross-browser testing</h2>
+
+        <p>For this project, the cross-browser testing was executed on Google Chrome and Safari.
+        There was minimal noticeable difference, and all the interaction and functionality behaves
+        like it should in both browsers.</p>
+
+
+        <h2>Tutorials and sources</h2>
+        <h4>Tutorials: </h4>
+          <p><div class="links">https://scrimba.com/g/ghtmlcss</div></p>
+          <p><div class="links">https://www.w3schools.com/jquery/default.asp</div></p>
+          <p><div class="links">https://www.w3schools.com/html/html5_canvas.asp</div></p>
+          <p><div class="links">https://www.w3schools.com/html/html5_svg.asp</div></p>
+          <p><div class="links">https://css-tricks.com/snippets/css/a-guide-to-flexbox/?fbclid=
+            IwAR2UK2iaJfFeCTH6FuyxOfmvB03ibAAxdGqGdnTP-XT3UtuTK1d1BUTFajA</div></p>
+
+
+        <h4>Sources:</h4>
+        <p>Ellipse in Canvas: <div class="links">
+        http://www.williammalone.com/briefs/how-to-draw-ellipse-html5-canvas/</div></p>
+        <p>Rounded rectangle in Canvas: <div class="links">
+          https://stackoverflow.com/questions/1255512/how-to-draw-a-rounded-rectangle-on-html-canvas
+        </div></p>
+
+    </div> <!--documentation-->
+
+
+  </body>
+
+  <footer>
+    <h3>IT2810 Project 1</h3>
+    <p style="text-align: center; color: white;">&copy; My daughter</p>
+  </footer>
+</html>
